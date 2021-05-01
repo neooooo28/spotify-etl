@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Improvements
 
-Right now this project relies on saving a `.db` file locally, in the future the plan is to incorporate Airflow DAGs to automatically refresh the API tokens and pull data on a daily basis. And then probably level up this entire process by using the AWS Ecosystem (s3, EMR, Redshift)
+Right now this project relies on saving a `.db` file locally, in the future the plan is to incorporate **Airflow DAGs** to automatically refresh the API tokens and pull data on a daily basis. And then probably level up this entire process by using the **AWS Ecosystem (s3, EMR, Redshift)**
 
 ## Demo
 
