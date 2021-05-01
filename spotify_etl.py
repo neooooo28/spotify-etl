@@ -13,8 +13,8 @@ import pandas as pd
 
 # Define constants
 DB_LOCATION = "sqlite:///played_tracks.db"
-USER_ID = "akosiecho2" # Spotify username
-TOKEN = "BQBtqOcxPb18B2VVqfmaFeoBrjjlKHqssYImkY-Y1GvhbgiEPuhJ_GOpm0R2msXCb9Bo4GQoCaBxD_RsOAPkbYnCiDA31gl8fHee4WVMhtvpAoNYGonv16_oPzs48ZkaF97J023rESOxlfJBcJAq" # Spotify API Token
+USER_ID = "" # Spotify username
+TOKEN = "" # Spotify API Token
 
 # Use this link to generate Spotify token: https://developer.spotify.com/console/get-recently-played/
 
