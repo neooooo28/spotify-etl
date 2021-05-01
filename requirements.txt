@@ -1,0 +1,5 @@
+
+# Python 3.7
+requests==2.25.1
+sqlalchemy==1.4.7
+pandas==1.2.4
