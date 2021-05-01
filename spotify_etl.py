@@ -1,5 +1,3 @@
-
-
 # Import libraries
 from datetime import datetime
 import datetime
@@ -15,12 +13,9 @@ import pandas as pd
 DB_LOCATION = "sqlite:///played_tracks.db"
 USER_ID = "" # Spotify username
 TOKEN = "" # Spotify API Token
-
 # Use this link to generate Spotify token: https://developer.spotify.com/console/get-recently-played/
 
-
 ## EXTRACT
-
 def yesterday_unix_ts() -> int:
     """Converts time to unix timestamp in milliseconds"""
     today = datetime.datetime.now()
@@ -44,7 +39,6 @@ def download_songs() -> json:
     return data
 
 ## TRANSFORM
-
 def clean_data(data_json: json) -> pd.DataFrame:
     """Inputs a json file, returns a pandas dataframe"""
     # Create arrays to contain information
@@ -80,7 +74,7 @@ def validate_data(df: pd.DataFrame) -> bool:
         pass
     else:
         raise Exception("Primary Key check is violated")
-
+        
     # 3. Check for nulls
     if df.isnull().values.any():
         raise Exception("NULL values found")
@@ -104,19 +98,6 @@ def create_sql_engine(data_df):
     engine = sqlalchemy.create_engine(DB_LOCATION, echo=True)
     sql_conn = engine.connect()
     
-    # cursor = sql_conn.cursor() 
-    # sql_query = """
-    # CREATE TABLE IF NOT EXISTS played_tracks(
-    #     song_name VARCHAR(200),
-    #     artist_name VARCHAR(200),
-    #     played_at VARCHAR(200),
-    #     timestamp VARCHAR(200),
-    #     CONSTRAINT primary_key_constraint PRIMARY KEY (played_at)
-    # )
-    # """
-    # cursor.execute(sql_query)
-
-
     print("SUCCESS: Opened Database")
 
     try:
@@ -136,12 +117,9 @@ def create_sql_engine(data_df):
 def main(): 
     data_json = download_songs()     # extract 
     data_df = clean_data(data_json)  # transform
-
     if validate_data(data_df):       # validate 
         print("Proceed to Load stage")
-
     create_sql_engine(data_df)       # load
 
 if __name__ == "__main__":
     main()
-
