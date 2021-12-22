@@ -16,6 +16,6 @@ Right now this project relies on saving a `.db` file locally, in the future the 
 
 ## Demo
 
-This is a sample view of my played tracks on May 1st 2021, as seen on a SQLite viewer.
+This is a sample view of my played tracks on May 1st 2021, as seen on a SQLite viewer
 
 ![](https://github.com/neooooo28/spotify-etl/blob/main/demo_photos/demo1_sqlite_view.png)
